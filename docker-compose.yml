@@ -29,8 +29,9 @@ services:
 
     # db mysql
     db:
-        image: mysql:5.7.22
-        restart: unless-stopped
+        image: mysql:8.0
+        platform: linux/amd64
+        restart: always
         environment:
             MYSQL_DATABASE: ${DB_DATABASE:-laravel}
             MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-root}
